@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './home';
+import About from './about';
+import Contact from './contact';
 
 export default class navbar extends Component {
   render() {
@@ -6,7 +10,7 @@ export default class navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg bg-body-primary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/home">Monkey News</a>
+                <a className="navbar-brand" href="/home">Quikky News</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -16,8 +20,8 @@ export default class navbar extends Component {
                     <a className="nav-link" href="/about">About</a>
                     <a className="nav-link" href="/contact">contact</a>
                 </div>
-                </div>
             </div>
+          </div>
         </nav>
       </div>
     )
