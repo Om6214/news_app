@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './home';
-import About from './about';
-import Contact from './contact';
 
 export default class navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-primary">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/home">Quikky News</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,9 +12,13 @@ export default class navbar extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className="nav-link active" aria-current="page" href="/home">Home</a>
-                    <a className="nav-link" href="/about">About</a>
-                    <a className="nav-link" href="/contact">contact</a>
+                    <li className="nav-link active" aria-current="page" href="/home">Home</li>
+                    <li className="nav-link" href="/about">About</li>
+                    <li className="nav-link" href="/contact">contact</li>
+                    <li className="nav-link" href="/contact">business</li>
+                    <li className="nav-link" href="/contact">entertainment</li>
+                    <li className="nav-link" href="/contact">health</li>
+                    <li className="nav-link" href="/contact">sports</li>
                 </div>
             </div>
           </div>

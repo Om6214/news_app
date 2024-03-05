@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import NewsItem from './newsitem';
+import PropTypes from 'prop-types'
+
 
 export default class News extends Component {
+  static defaultProps = {
+    country : 'us',
+    pageSize : 8,
+    catagory : 'general'
+  }
+  static propTypes = {
+    country : PropTypes.string,
+    pageSize : PropTypes.number,
+    catagory : PropTypes.string
+  }
   constructor() {
     super();
     console.log("hello I am a constructor") 
     this.state = {
-      articles: [], // Corrected state name from 'article' to 'articles'
+      articles: [],
       loading: false
     };
   }
-
+  
   componentDidMount() {
-    fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=5b5c3e5b65214561a06414f09b414f48')
+    fetch(`https://newsapi.org/v2/top-headlines?category=${this.props.catagory}&country=${this.props.country}&pageSize=${this.props.pageSize}&apiKey=5b5c3e5b65214561a06414f09b414f48`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error fetching data');
@@ -26,7 +38,7 @@ export default class News extends Component {
         });
       })
       .catch((error) => {
-        console.error(error.message); // Handle errors
+        console.log("error in fetching")
         this.setState({ loading: false });
       });
   }

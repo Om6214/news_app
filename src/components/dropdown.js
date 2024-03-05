@@ -12,6 +12,18 @@ class dropdown extends Component {
       toggleDropdown() {
         this.setState({ isOpen: !this.state.isOpen });
       }
+      handleBusinessnews=()=>{
+        console.log("business")
+      }
+      handleTechnews=()=>{
+        console.log("Tech")
+      }
+      handleApplenews=()=>{
+        console.log("apple")
+      }
+      handleTeslanews=()=>{
+        console.log("tesla")
+      }
   render() {
     return (
       <div>
@@ -20,10 +32,10 @@ class dropdown extends Component {
             News Catagory
             </button>
             <div className={"dropdown-menu" + (this.state.isOpen ? " show" : "")}>
-            <a className="dropdown-item" href="/">Business</a>
-            <a className="dropdown-item" href="/">Tech</a>
-            <a className="dropdown-item" href="/">Apple</a>
-            <a className="dropdown-item" href="/">Tesla Moters</a>
+            <a className="dropdown-item" onClick={this.handleBusinessnews} href="/">Business</a>
+            <a className="dropdown-item" onClick={this.handleTechnews} href="/">Tech</a>
+            <a className="dropdown-item" onClick={this.handleApplenews} href="/">Apple</a>
+            <a className="dropdown-item" onClick={this.handleTeslanews} href="/">Tesla Moters</a>
             </div>
         </div>
       </div>
