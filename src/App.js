@@ -3,6 +3,7 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import Navbar from './components/navbar'
 import News from './components/News';
 import About from './components/about';
+import Intro from './components/intro';
 
 const App = () => {
   return <BrowserRouter>
@@ -17,6 +18,7 @@ const App = () => {
       <Route exact path='/home' element={<News key="general" catagory="general" pageSize={30}/>} />
       <Route exact path='/science' element={<News key="science" catagory="science" pageSize={30}/>} />
       <Route exact path='/about' element={<About key="about"/>} />
+      <Route exact path='/intro' element={<Intro/>} />
     </Routes>
   </BrowserRouter>
     

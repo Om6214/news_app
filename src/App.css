@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+#opening{
+  background-image: 'https://elements-video-cover-images-0.imgix.net/files/11443e38-f9e9-4f6e-9b34-be17f13e22a9/inline_image_preview.jpg?auto=compress%2Cformat&fit=min&h=394&w=700&s=669b565342a1f231924f3a1a76a38690';
+}
 
 .App-logo {
   height: 40vmin;
@@ -50,6 +53,7 @@ body.about {
 
 header h1 {
   text-align: center;
+  margin-top: 50px;
 }
 
 main {
