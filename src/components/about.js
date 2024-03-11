@@ -4,8 +4,8 @@ import '../App.css'
 const about = () => {
   return (
     <div>
-      <body class="about">
-    <div class="tanki">
+      <body className="about">
+    <div className="tanki">
         <header>
             <h1>About Quicky News</h1>
         </header>

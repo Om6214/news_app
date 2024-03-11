@@ -21,7 +21,8 @@ export default class navbar extends Component {
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/health">health</Link>
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/sports">sports</Link>
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/about">about</Link>
-                </div>z
+                    <Link style={{cursor:'pointer'}} className="nav-link" to="/contact">Contact</Link>
+                </div>
             </div>
           </div>
         </nav>

@@ -69,4 +69,6 @@ footer p {
   font-size: 0.8rem;
   color: #666;
 }
-
+body{
+  background-color: rgb(180, 166, 166);
+}
