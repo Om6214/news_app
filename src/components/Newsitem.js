@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const NewsItem = ({ title, description, content, imageUrl, author, publishedAt }) => {
+const NewsItem = ({ title, description, content, imageUrl,url, author, published }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/detail', { state: { title, content, imageUrl, author } });
+    navigate('/detail', { state: { title, content, imageUrl,url, author,published} });
   };
 
   return (
@@ -17,7 +17,7 @@ const NewsItem = ({ title, description, content, imageUrl, author, publishedAt }
           <h5 className="card-title">{title}...</h5>
           <p className="card-text">{description}...</p>
           <p style={{ marginLeft: '100px' }}>--{author}</p>
-          <p style={{ textAlign: "center" }}>{publishedAt}</p>
+          <p style={{ textAlign: "center" }}>Data : {published}</p>
           <button onClick={handleNavigate} className="btn btn-sm btn-dark">Read more</button>
         </div>
       </div>

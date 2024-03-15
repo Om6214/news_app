@@ -7,7 +7,7 @@ export default class navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/intro">Quikky News</Link>
+                <Link className="navbar-brand" to="/">Quikky News</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,7 +21,6 @@ export default class navbar extends Component {
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/health">health</Link>
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/sports">sports</Link>
                     <Link style={{cursor:'pointer'}} className="nav-link" to="/about">about</Link>
-                    <Link style={{cursor:'pointer'}} className="nav-link" to="/contact">Contact</Link>
                 </div>
             </div>
           </div>

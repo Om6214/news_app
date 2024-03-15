@@ -4,7 +4,6 @@ import Navbar from './components/navbar'
 import News from './components/News';
 import About from './components/about';
 import Intro from './components/intro';
-import Contact from './components/contact';
 import Detail from './components/Detail';
 
 const App = () => {
@@ -20,8 +19,7 @@ const App = () => {
       <Route exact path='/home' element={<News key="general" catagory="general"  />} />
       <Route exact path='/science' element={<News key="science" catagory="science"  />} />
       <Route exact path='/about' element={<About key="about"/>} />
-      <Route exact path='/intro' element={<Intro/>} />
-      <Route exact path='/contact' element={<Contact/>} />
+      <Route exact path='/' element={<Intro/>} />
       <Route exact path='/detail' element={<Detail/>} />
     </Routes>
   </BrowserRouter>

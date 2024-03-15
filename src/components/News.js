@@ -23,7 +23,7 @@ export default class News extends Component {
   }
   
   componentDidMount() {
-    fetch(`https://gnews.io/api/v4/top-headlines?category=${this.props.catagory}&lang=en&country=${this.props.country}&max=10&apikey=98acfdb78caa368f66bf357294f3ce4b`)
+    fetch(`https://newsapi.org/v2/top-headlines?category=${this.props.catagory}&lang=en&country=${this.props.country}&max=10&apikey=5b5c3e5b65214561a06414f09b414f48`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error fetching data');
@@ -54,9 +54,9 @@ export default class News extends Component {
                 author={element.source.name}
                 content={element.content}
                 description={element.description ? element.description.slice(0, 88) : "No description"}
-                imageUrl={element.image}
-                newsUrl={element.source.url}
-                published={element.publishedAt}
+                imageUrl={element.urlToImage}
+                url={element.url}
+                published={element.publishedAt ? element.publishedAt.slice(0, 10) : "No date available"}
               />
               
             </div>
