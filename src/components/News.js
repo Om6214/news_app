@@ -16,7 +16,6 @@ export default class News extends Component {
   }
   constructor() {
     super();
-    console.log("hello I am a constructor") 
     this.state = {
       articles: [],
       loading: false
@@ -24,7 +23,7 @@ export default class News extends Component {
   }
   
   componentDidMount() {
-    fetch(`https://newsapi.org/v2/top-headlines?category=${this.props.catagory}&country=${this.props.country}&pageSize=${this.props.pageSize}&apiKey=5b5c3e5b65214561a06414f09b414f48`)
+    fetch(`https://gnews.io/api/v4/top-headlines?category=${this.props.catagory}&lang=en&country=${this.props.country}&max=10&apikey=98acfdb78caa368f66bf357294f3ce4b`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error fetching data');
@@ -34,48 +33,6 @@ export default class News extends Component {
       .then((data) => { // Store fetched data in component state
         this.setState({
           articles: data.articles,
-          loading: false
-        });
-      })
-      .catch((error) => {
-        console.log("error in fetching")
-        this.setState({ loading: false });
-      });
-  }
-  handleprevbutton=async()=>{
-    console.log("previos button clicked")
-    fetch(`https://newsapi.org/v2/top-headlines?category=${this.props.catagory}&country=${this.props.country}&pageSize=${this.props.pageSize}&page=${this.state.page-1}&apiKey=5b5c3e5b65214561a06414f09b414f48`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Error fetching data');
-        }
-        return res.json();
-      })
-      .then((data) => { // Store fetched data in component state
-        this.setState({
-          articles: data.articles,
-          page:this.state.page-1,
-          loading: false
-        });
-      })
-      .catch((error) => {
-        console.log("error in fetching")
-        this.setState({ loading: false });
-      });
-  }
-  handlenextbutton=async()=>{
-    console.log("next button clicked")
-    fetch(`https://newsapi.org/v2/top-headlines?category=${this.props.catagory}&country=${this.props.country}&pageSize=${this.props.pageSize}&page=${this.state.page+1}&apiKey=5b5c3e5b65214561a06414f09b414f48`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Error fetching data');
-        }
-        return res.json();
-      })
-      .then((data) => { // Store fetched data in component state
-        this.setState({
-          articles: data.articles,
-          page:this.state.page+1,
           loading: false
         });
       })
@@ -94,11 +51,12 @@ export default class News extends Component {
             <div className="col" key={element.url}>
               <NewsItem
                 title={element.title ? element.title.slice(0, 45) : "No title"}
-                author={element.author}
+                author={element.source.name}
                 content={element.content}
                 description={element.description ? element.description.slice(0, 88) : "No description"}
-                imageUrl={element.urlToImage}
-                newsUrl={element.url}
+                imageUrl={element.image}
+                newsUrl={element.source.url}
+                published={element.publishedAt}
               />
               
             </div>
